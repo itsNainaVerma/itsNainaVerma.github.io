@@ -25,10 +25,7 @@
             justify-content: center;
             transition: transform 0.3s ease-in-out, background 0.3s;
         }
-        .hobby-item:hover {
-            transform: scale(1.1);
-            background: #e1e8ed;
-        }
+        
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -38,16 +35,7 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-        }
+        
         .glass-card:hover {
             transform: translateY(-5px);
             box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
@@ -68,10 +56,7 @@
             text-align: center;
             transition: transform 0.3s ease-in-out, background 0.3s;
         }
-        .prowess-item:hover {
-            transform: scale(1.05);
-            background: #e1e8ed;
-        }
+        
         .arsenal-container {
             display: flex;
             flex-wrap: wrap;
@@ -88,10 +73,7 @@
             text-align: center;
             transition: transform 0.3s ease-in-out, background 0.3s;
         }
-        .arsenal-item:hover {
-            transform: scale(1.05);
-            background: #e1e8ed;
-        }
+        
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -134,13 +116,15 @@
             display: flex;
             gap: 15px;
         }
-       .contact a img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
+        .contact a img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
         .contact a img:hover {
             transform: scale(1.2);
             box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
@@ -191,7 +175,7 @@
             font-size: 1.1em;
             transition: background 0.3s;
         }
-        ul li:hover {
+        ul.certifications li:hover {
             background: #e1e8ed;
         }
         .education-container, .work-experience {
@@ -207,10 +191,7 @@
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-        .education-item:hover, .job:hover {
-            transform: translateY(-5px);
-            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
-        }
+        
         .job h3, .education-item h3 {
             margin: 0;
             color: #1f2833;
@@ -257,6 +238,24 @@
                 padding: 20px;
             }
         }
+    
+        .in-progress-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .in-progress-item {
+            background: #f1f1f1;
+            padding: 12px 18px;
+            border-radius: 6px;
+            border: 2px solid #b8c7cf;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+        }
+        
     </style>
     <script>
         let lastScrollTop = 0;
@@ -278,7 +277,7 @@
     <div class="sidebar">
         <h1>Naina Verma</h1>
         <p>Senior Quality Assurance Engineer</p>
-        <img src="DSC05097.PNG" alt="Naina Verma">
+        <img src="DSC05097 copy edited BG orange - cropped.PNG" alt="Naina Verma">
         <h2 class="contact-heading" style="margin-top: 180px; color: white;">Contacts</h2>
         <div class="contact">
             <a href="mailto:naina.verma1903@gmail.com"><img src="email.png" alt="Email"></a>
@@ -288,9 +287,9 @@
     <div class="main-content">
         <section class="about-me">
             <h2>📌 About Me</h2>
-            <p class="about-text">Passionate Software Quality Assurance Engineer  with a knack for breaking things before users do! </p>
-            <p class="about-text">With 4+ years of experience, I specialize in crafting robust testing strategies, driving efficiency improvements, and collaborating across teams to maintain top-tier software quality. Whether it's automating complex workflows, testing APIs, or optimizing test execution, I'm all about innovation and precision.</p>
-            <p class="about-text">Beyond testing, I’m a continuous learner, tech enthusiast, and problem-solver, always looking for ways to push boundaries in software quality.🚀</p>
+            <p class="about-text">Passionate Software Quality Assurance Engineer with a knack for breaking things before users do! 🚀 With 4+ years of experience in test automation, API security, and performance optimization, I thrive on ensuring flawless digital experiences.</p>
+            <p class="about-text">I specialize in crafting robust testing strategies, driving efficiency improvements, and collaborating across teams to maintain top-tier software quality. Whether it's automating complex workflows, securing APIs, or optimizing test execution, I'm all about innovation and precision.</p>
+            <p class="about-text">Beyond testing, I’m a continuous learner, tech enthusiast, and problem-solver, always looking for ways to push boundaries in software quality. Let’s build something amazing together! 💡</p>
             <img src="ISTQB-logo.png" alt="ISTQB Certified" class="certification-badge">
         </section>
         
@@ -323,45 +322,51 @@
                 <div class="prowess-item">Test Monitoring & Controlling</div>
             </div>
         </section>
-        
+        <section>
+            <h2>🚀 Skills In-Progress</h2>
+            <div class="in-progress-container">
+                <div class="in-progress-item">Playwright</div>
+                <div class="in-progress-item">Appium</div>
+            </div>
+        </section>
         <section>
             <h2>💼 Work Experience</h2>
             <div class="work-experience">
                 <div class="job">
                     <h3>Lead Associate - Quality Assurance & Engineering</h3>
-                    <p class="company">Lentra | <span>Jul 2024 – Oct 2024</span></p>
+                    <p class="company">Lentra | Jul 2024 – Oct 2024</p>
                     <ul>
-                        <li>Led a team of 5 testers, boosting testing efficiency and ensuring timely delivery of quality software.</li>
-                        <li>Optimized functional and regression suites, reducing test execution time by 20%.</li>
-                        <li>Actively contributed to Agile ceremonies, providing valuable QA insights.</li>
-                        <li>Implemented process improvements, reducing defect leakage by 30%.</li>
+                        <li><strong>Team Leadership and Efficiency Enhancement:</strong> Directed a team of 5 Quality Assurance testers, implementing strategic initiatives that resulted in a measurable increase in overall testing efficiency. Fostered a collaborative environment to ensure the timely delivery of high-quality software releases.</li>
+                        <li><strong>Test Suite Optimization and Performance Improvement:</strong> Conducted a comprehensive review and optimization of functional and regression test suites, leading to a 20% reduction in test execution time. This optimization significantly accelerated release cycles while maintaining test coverage.</li>
+                        <li><strong>Agile Ceremony Contribution and QA Insight:</strong> Actively participated in Agile ceremonies, including sprint planning, daily stand-ups, and retrospectives, providing valuable QA insights and ensuring alignment between development and testing efforts. Contributed to proactive risk identification and mitigation.</li>
+                        <li><strong>Process Improvement and Defect Leakage Reduction:</strong> Spearheaded the implementation of process improvements within the QA workflow, resulting in a 30% reduction in defect leakage into production environments. This initiative involved refining test case design, enhancing test environment stability, and improving communication protocols.</li>
                     </ul>
                 </div>
                 <div class="job">
                     <h3>Senior Associate - Quality Assurance & Engineering</h3>
-                    <p class="company">Lentra | <span>Jul 2023 – Jul 2024</span></p>
+                    <p class="company">Lentra | Jul 2023 – Jul 2024</p>
                     <ul>
-                        <li>Analyzed and troubleshot UAT/PROD defects, reducing resolution time by 70%.</li>
-                        <li>Delivered application demos for stakeholders, improving user understanding.</li>
-                        <li>Collaborated with developers and teams to improve product stability.</li>
+                        <li><strong>UAT/PROD Defect Analysis and Resolution:</strong> Conducted in-depth analysis and troubleshooting of defects reported in User Acceptance Testing (UAT) and Production (PROD) environments, achieving a 70% reduction in average defect resolution time. This involved meticulous root cause analysis and effective collaboration with development teams.</li>
+                        <li><strong>Stakeholder Application Demos and User Understanding:</strong> Delivered clear and concise application demonstrations to stakeholders, improving user understanding of new features and functionalities. This initiative facilitated effective feedback gathering and ensured alignment with user requirements.</li>
+                        <li><strong>Cross-Functional Collaboration and Product Stability:</strong> Collaborated closely with developers, product managers, and other cross-functional teams to identify and address potential product stability issues. This proactive approach contributed to a significant improvement in overall product reliability.</li>
                     </ul>
                 </div>
                 <div class="job">
                     <h3>Test Engineer</h3>
-                    <p class="company">Lentra | <span>Jun 2021 – Jul 2023</span></p>
+                    <p class="company">Lentra | Jun 2021 – Jul 2023</p>
                     <ul>
-                        <li>Reviewed User Story & acceptance criteria in JIRA, ensuring 100% test coverage alignment with business requirements.</li>
-                        <li>Designed and executed comprehensive test strategies, test plans, and test cases, improving defect detection by 50%.</li>
-                        <li>Identified and reported defects, actively following up to ensure timely resolution and reducing defect backlog by 80%.</li>
+                        <li><strong>User Story and Acceptance Criteria Review:</strong> Performed thorough reviews of User Stories and acceptance criteria within Jira, ensuring 100% test coverage alignment with business requirements. This meticulous approach minimized ambiguity and ensured comprehensive testing.</li>
+                        <li><strong>Test Strategy and Case Design & Execution:</strong> Designed and executed comprehensive test strategies, test plans, and test cases, resulting in a 50% improvement in defect detection rates. This involved utilizing a variety of testing techniques and methodologies to maximize test effectiveness.</li>
+                        <li><strong>Defect Identification, Reporting, and Resolution:</strong> Identified, documented, and reported software defects using Jira, proactively following up with development teams to ensure timely resolution. This effort contributed to an 80% reduction in the defect backlog, improving overall release velocity.</li>
                     </ul>
                 </div>
                 <div class="job">
                     <h3>Quality Analyst Intern</h3>
-                    <p class="company">Lentra | <span>Aug 2020 - Jun 2021</span></p>
+                    <p class="company">Lentra | Aug 2020 - Jun 2021</p>
                     <ul>
-                        <li>Conducted web application testing, ensuring compliance with functional and non-functional requirements.</li>
-                        <li>Prepared and reviewed test cases, enhancing test coverage by 90%.</li>
-                        <li>Tracked and reported defects, reducing closure time by 20%.</li>
+                        <li><strong>Web Application Testing and Compliance:</strong> Conducted thorough testing of web applications to ensure compliance with functional and non-functional requirements, including performance, usability, and security standards.</li>
+                        <li><strong>Test Case Preparation and Review:</strong> Prepared and reviewed detailed test cases, enhancing test coverage by 90%. This involved collaborating with senior QA engineers to ensure test case accuracy and completeness.</li>
+                        <li><strong>Defect Tracking and Reporting:</strong> Tracked and reported software defects using a defect tracking system, contributing to a 20% reduction in defect closure time. This experience provided valuable exposure to the defect lifecycle and resolution process.</li>
                     </ul>
                 </div>
             </div>
@@ -369,30 +374,31 @@
         <section>
             <h2>📜 Certifications</h2>
             <ul>
-                <li>ISTQB - Foundational Level Certificate in Software Testing</li>
-                <li>Introduction to TestNG by Test Automation University</li>
-                <li>Automating API tests with REST Assured by Test Automation University</li>
-                <li>API Test Automation by Test Automation University</li>
-                <li>Java Programming by Test Automation University</li>
+                <li>ISTQB - Foundational Level Certificate in Software Testing - <a href="https://www.linkedin.com/in/itsnainaverma/details/certifications/1715532194025/single-media-viewer/?profileId=ACoAAC3mTWIB-vXqosPdtZ3pkfOy6-ORkF2xJ3c" target="_blank">View Certificate</a></li>
+                <li>Introduction to TestNG by Test Automation University - <a href="https://testautomationu.applitools.com/certificate/?id=36d068fc" target="_blank">View Certificate</a></li>
+                <li>Automating API tests with REST Assured by Test Automation University - <a href="https://testautomationu.applitools.com/certificate/?id=715f305f" target="_blank">View Certificate</a></li>
+                <li>API Test Automation by Test Automation University - <a href="https://testautomationu.applitools.com/certificate/?id=edfdd70e" target="_blank">View Certificate</a></li>
+                <li>Java Programming by Test Automation University - <a href="https://testautomationu.applitools.com/certificate/?id=34361a25" target="_blank">View Certificate</a></li>
             </ul>
         </section>
+
         
         <section>
             <h2>🎓 Education</h2>
             <div class="education-container">
                 <div class="education-item">
                     <h3>Master of Computer Applications</h3>
-                    <p class="institution">Vellore Institute of Technology, Tamil Nadu <span>(2019 – 2021)</span></p>
+                    <p class="institution">Vellore Institute of Technology, Tamil Nadu </p>
                     <p class="details">CGPA: 8.99</p>
                 </div>
                 <div class="education-item">
                     <h3>Bachelor of Computer Applications</h3>
-                    <p class="institution">Panjab University, Chandigarh <span>(2016 – 2019)</span></p>
+                    <p class="institution">Panjab University, Chandigarh </p>
                     <p class="details">Percentage: 80%</p>
                 </div>
                 <div class="education-item">
                     <h3>Advance Diploma in Animation and Graphics</h3>
-                    <p class="institution">Panjab University, Chandigarh <span>(2016 – 2019)</span></p>
+                    <p class="institution">Panjab University, Chandigarh </p>
                 </div>
             </div>
         </section>
