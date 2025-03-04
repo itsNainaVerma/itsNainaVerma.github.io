@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naina Verma | Portfolio</title>
+    <style>
+        .hobbies-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .hobby-item {
+            background: #f1f1f1;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 2px solid #b8c7cf;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            font-size: 1.5em;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+        }
+        .hobby-item:hover {
+            transform: scale(1.1);
+            background: #e1e8ed;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
+        }
+        .prowess-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .prowess-item {
+            background: #f1f1f1;
+            padding: 12px 18px;
+            border-radius: 6px;
+            border: 2px solid #b8c7cf;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+        }
+        .prowess-item:hover {
+            transform: scale(1.05);
+            background: #e1e8ed;
+        }
+        .arsenal-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .arsenal-item {
+            background: #f1f1f1;
+            padding: 12px 18px;
+            border-radius: 6px;
+            border: 2px solid #b8c7cf;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+        }
+        .arsenal-item:hover {
+            transform: scale(1.05);
+            background: #e1e8ed;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d1dbe0;
+            color: #333;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .sidebar {
+            width: 23%;
+            background: #1f2833;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            height: 100vh;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.5s ease-in-out;
+        }
+        .sidebar.hidden {
+            transform: translateX(-100%);
+            visibility: hidden;
+        }
+        .sidebar img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin-top: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar img:hover {
+            transform: scale(1.1);
+        }
+        .contact {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+       .contact a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+        .contact a img:hover {
+            transform: scale(1.2);
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+        }
+        .contact a img:hover {
+            transform: scale(1.2);
+        }
+        .main-content {
+            margin-left: 25%;
+            width: 72%;
+            padding: 40px;
+            transition: margin-left 0.5s ease-in-out;
+        }
+        .main-content.expanded {
+            width: 100%;
+            margin-left: 0;
+        }
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #b8c7cf;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #1f2833;
+            border-bottom: 4px solid #b8c7cf;
+            padding-bottom: 10px;
+            font-size: 1.8em;
+            text-transform: uppercase;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 12px;
+            border-left: 5px solid #b8c7cf;
+            margin-bottom: 10px;
+            background: #f1f1f1;
+            border-radius: 6px;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+        ul li:hover {
+            background: #e1e8ed;
+        }
+        .education-container, .work-experience {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .education-item, .job {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid #b8c7cf;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .education-item:hover, .job:hover {
+            transform: translateY(-5px);
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .job h3, .education-item h3 {
+            margin: 0;
+            color: #1f2833;
+        }
+        .company, .institution {
+            font-weight: bold;
+            color: #4d616b;
+            margin-bottom: 8px;
+        }
+        .company span, .institution span {
+            font-weight: normal;
+            color: #666;
+        }
+        .about-me {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #b8c7cf;
+            text-align: left;
+        }
+        .about-text {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.6;
+        }
+        .certification-badge {
+            margin-top: 15px;
+            width: 120px;
+        }
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 20px;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+    <script>
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function() {
+            let currentScroll = window.scrollY;
+            let sidebar = document.querySelector(".sidebar");
+            let mainContent = document.querySelector(".main-content");
+            if (currentScroll > 100) {
+                sidebar.classList.add("hidden");
+                mainContent.classList.add("expanded");
+            } else {
+                sidebar.classList.remove("hidden");
+                mainContent.classList.remove("expanded");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Naina Verma</h1>
+        <p>Senior Quality Assurance Engineer</p>
+        <img src="DSC05097.PNG" alt="Naina Verma">
+        <h2 class="contact-heading" style="margin-top: 180px; color: white;">Contacts</h2>
+        <div class="contact">
+            <a href="mailto:naina.verma1903@gmail.com"><img src="email.png" alt="Email"></a>
+            <a href="https://linkedin.com/in/itsnainaverma" target="_blank"><img src="linkedin (1).png" alt="LinkedIn"></a>
+        </div>
+    </div>
+    <div class="main-content">
+        <section class="about-me">
+            <h2>📌 About Me</h2>
+            <p class="about-text">Passionate Software Quality Assurance Engineer  with a knack for breaking things before users do! </p>
+            <p class="about-text">With 4+ years of experience, I specialize in crafting robust testing strategies, driving efficiency improvements, and collaborating across teams to maintain top-tier software quality. Whether it's automating complex workflows, testing APIs, or optimizing test execution, I'm all about innovation and precision.</p>
+            <p class="about-text">Beyond testing, I’m a continuous learner, tech enthusiast, and problem-solver, always looking for ways to push boundaries in software quality.🚀</p>
+            <img src="ISTQB-logo.png" alt="ISTQB Certified" class="certification-badge">
+        </section>
+        
+        <section>
+            <h2>🛠️ Automation Arsenal</h2>
+            <div class="arsenal-container">
+                <div class="arsenal-item">Java</div>
+                <div class="arsenal-item">Selenium</div>
+                <div class="arsenal-item">TestNG</div>
+                <div class="arsenal-item">Rest Assured</div>
+                <div class="arsenal-item">Karate Framework</div>
+                <div class="arsenal-item">Gherkin</div>
+                <div class="arsenal-item">Postman</div>
+                <div class="arsenal-item">JMeter</div>
+                <div class="arsenal-item">Maven</div>
+                <div class="arsenal-item">Jenkins</div>
+                <div class="arsenal-item">Git</div>
+                <div class="arsenal-item">JIRA</div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>🛡️ Testing Prowess</h2>
+            <div class="prowess-container">
+                <div class="prowess-item">Manual Testing</div>
+                <div class="prowess-item">API Testing</div>
+                <div class="prowess-item">Test Planning & Strategy</div>
+                <div class="prowess-item">Defect Tracking & Analysis</div>
+                <div class="prowess-item">Performance & Load Testing</div>
+                <div class="prowess-item">Test Monitoring & Controlling</div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>💼 Work Experience</h2>
+            <div class="work-experience">
+                <div class="job">
+                    <h3>Lead Associate - Quality Assurance & Engineering</h3>
+                    <p class="company">Lentra | <span>Jul 2024 – Oct 2024</span></p>
+                    <ul>
+                        <li>Led a team of 5 testers, boosting testing efficiency and ensuring timely delivery of quality software.</li>
+                        <li>Optimized functional and regression suites, reducing test execution time by 20%.</li>
+                        <li>Actively contributed to Agile ceremonies, providing valuable QA insights.</li>
+                        <li>Implemented process improvements, reducing defect leakage by 30%.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Senior Associate - Quality Assurance & Engineering</h3>
+                    <p class="company">Lentra | <span>Jul 2023 – Jul 2024</span></p>
+                    <ul>
+                        <li>Analyzed and troubleshot UAT/PROD defects, reducing resolution time by 70%.</li>
+                        <li>Delivered application demos for stakeholders, improving user understanding.</li>
+                        <li>Collaborated with developers and teams to improve product stability.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Test Engineer</h3>
+                    <p class="company">Lentra | <span>Jun 2021 – Jul 2023</span></p>
+                    <ul>
+                        <li>Reviewed User Story & acceptance criteria in JIRA, ensuring 100% test coverage alignment with business requirements.</li>
+                        <li>Designed and executed comprehensive test strategies, test plans, and test cases, improving defect detection by 50%.</li>
+                        <li>Identified and reported defects, actively following up to ensure timely resolution and reducing defect backlog by 80%.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Quality Analyst Intern</h3>
+                    <p class="company">Lentra | <span>Aug 2020 - Jun 2021</span></p>
+                    <ul>
+                        <li>Conducted web application testing, ensuring compliance with functional and non-functional requirements.</li>
+                        <li>Prepared and reviewed test cases, enhancing test coverage by 90%.</li>
+                        <li>Tracked and reported defects, reducing closure time by 20%.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>📜 Certifications</h2>
+            <ul>
+                <li>ISTQB - Foundational Level Certificate in Software Testing</li>
+                <li>Introduction to TestNG by Test Automation University</li>
+                <li>Automating API tests with REST Assured by Test Automation University</li>
+                <li>API Test Automation by Test Automation University</li>
+                <li>Java Programming by Test Automation University</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>🎓 Education</h2>
+            <div class="education-container">
+                <div class="education-item">
+                    <h3>Master of Computer Applications</h3>
+                    <p class="institution">Vellore Institute of Technology, Tamil Nadu <span>(2019 – 2021)</span></p>
+                    <p class="details">CGPA: 8.99</p>
+                </div>
+                <div class="education-item">
+                    <h3>Bachelor of Computer Applications</h3>
+                    <p class="institution">Panjab University, Chandigarh <span>(2016 – 2019)</span></p>
+                    <p class="details">Percentage: 80%</p>
+                </div>
+                <div class="education-item">
+                    <h3>Advance Diploma in Animation and Graphics</h3>
+                    <p class="institution">Panjab University, Chandigarh <span>(2016 – 2019)</span></p>
+                </div>
+            </div>
+        </section>
+            <section>
+            <h2>🌟 Interests</h2>
+            <div class="hobbies-container">
+                <div class="hobby-item">🧩 Puzzles</div>
+                <div class="hobby-item">🎮 Gaming</div>
+                <div class="hobby-item">🧘 Yoga</div>
+                <div class="hobby-item">💃 Dance</div>
+                <div class="hobby-item">🍳 Cooking</div>
+                <div class="hobby-item">🎨 Art</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
