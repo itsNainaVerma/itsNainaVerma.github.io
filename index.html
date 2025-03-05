@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Naina Verma | Portfolio</title>
   <style>
-    /* Font Styles */
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'SangBleu', sans-serif;
-    }
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #F7F7F7;
@@ -19,10 +15,13 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
-    /* Sidebar */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
     .sidebar {
-      width: 23%;
-      background: #2C3E50;
+      width: 18%;
+      background: #2f4057;
       color: #FFF;
       padding: 30px;
       text-align: center;
@@ -31,7 +30,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 0.8s ease-in-out;
     }
     .sidebar.hidden {
       transform: translateX(-100%);
@@ -55,22 +54,20 @@
     .contact a img {
       width: 40px;
       height: 40px;
-      border-radius: 50%;
-      background: #FFF;
+      border-radius: 0%;
+      background: none;
       padding: 5px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+      box-shadow: none;
     }
     .contact a img:hover {
       transform: scale(1.2);
-      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
     }
-    /* Main Content */
     .main-content {
-      margin-left: 25%;
+      margin-left: 20%;
       width: 72%;
       padding: 40px;
-      transition: margin-left 0.5s ease-in-out;
+      transition: margin-left 0.8s ease-in-out;
     }
     .main-content.expanded {
       width: 100%;
@@ -155,7 +152,6 @@
       margin-top: 15px;
       width: 120px;
     }
-    /* Containers for items */
     .hobbies-container, .prowess-container, .arsenal-container, .in-progress-container {
       display: flex;
       flex-wrap: wrap;
@@ -172,7 +168,6 @@
       text-align: center;
       transition: transform 0.3s ease-in-out, background 0.3s;
     }
-    /* Toggle Button for Work Experience Details */
     .toggle-btn {
       margin: 10px 0;
       padding: 8px 12px;
@@ -189,7 +184,7 @@
     .collapsible-content {
       display: none;
     }
-    /* Responsive Styles */
+
     @media screen and (max-width: 768px) {
       body {
         flex-direction: column;
@@ -257,7 +252,7 @@
       <p class="about-text">Beyond testing, I’m a continuous learner, tech enthusiast, and problem-solver, always looking for ways to push boundaries in software quality. Let’s build something amazing together! 💡</p>
       <img src="ISTQB-logo.png" alt="ISTQB Certified" class="certification-badge">
     </section>
-    <section>
+ <section>
       <h2>🛠️ Automation Arsenal</h2>
       <div class="arsenal-container">
         <div class="arsenal-item">Java</div>
@@ -379,5 +374,6 @@
       </div>
     </section>
   </div>
+
 </body>
 </html>
